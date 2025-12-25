@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Christmas Game for You 🎄</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Snowfall Canvas -->
+    <canvas id="snowfall"></canvas>
+
+    <!-- Password Screen -->
+    <div id="password-screen" class="screen active">
+        <div class="password-container">
+            <h1 class="glow-text">🎄 Enter to Begin 🎄</h1>
+            <p class="hint-text">Hint: 🌙</p>
+            <input type="text" id="password-input" placeholder="Enter password..." maxlength="10">
+            <button id="password-submit" class="game-button">Unlock</button>
+            <p id="password-error" class="error-text"></p>
+        </div>
+    </div>
+
+    <!-- Landing Screen -->
+    <div id="landing-screen" class="screen">
+        <div class="landing-content">
+            <h1 class="main-title glow-text">A Little Christmas Game for You 🎄</h1>
+            <p class="subtitle">Made with warmth, from afar</p>
+            <button id="start-game" class="game-button pulse">Start Game</button>
+            <button id="music-toggle" class="music-toggle">🔇</button>
+        </div>
+        <div class="fairy-lights"></div>
+    </div>
+
+    <!-- Level 1 - Message -->
+    <div id="level1-screen" class="screen">
+        <div class="message-container">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <div class="heart-glow"></div>
+                </div>
+            </div>
+            <div class="dialogue-box">
+                <p id="typing-text" class="typing-text"></p>
+                <div class="dialogue-indicator"></div>
+            </div>
+            <button id="level1-next" class="game-button hidden">Continue ✨</button>
+        </div>
+    </div>
+
+    <!-- Level 2 - Interactive Wishes -->
+    <div id="level2-screen" class="screen">
+        <div class="wishes-container">
+            <h2 class="level-title glow-text">Tap the Stars ⭐</h2>
+            <div class="floating-elements">
+                <div class="floating-item" data-wish="Warm days ahead ✨">⭐</div>
+                <div class="floating-item" data-wish="Soft smiles and calm nights ❄️">❄️</div>
+                <div class="floating-item" data-wish="Joy, always 🎄">🎄</div>
+                <div class="floating-item" data-wish="Peace in every moment 🕊️">💫</div>
+                <div class="floating-item" data-wish="Love finds you wherever you are 💖">💝</div>
+                <div class="floating-item" data-wish="Dreams come true this season ✨">🌟</div>
+            </div>
+            <div id="wish-display" class="wish-display"></div>
+            <button id="level2-next" class="game-button hidden">Continue to Playlist 🎧</button>
+        </div>
+    </div>
+
+    <!-- Level 3 - Playlist Room -->
+    <div id="level3-screen" class="screen">
+        <div class="playlist-container">
+            <div class="room-decoration">
+                <div class="window">
+                    <div class="window-pane"></div>
+                    <div class="window-pane"></div>
+                    <div class="window-pane"></div>
+                    <div class="window-pane"></div>
+                </div>
+                <div class="room-lights"></div>
+            </div>
+            
+            <h2 class="playlist-title glow-text">Songs I Wanted to Share With You 🎧</h2>
+            <p class="playlist-caption">These songs quietly remind me of you.</p>
+            
+            <div class="playlist">
+                <div class="song-item" data-song="1">
+                    <span class="song-number">01</span>
+                    <div class="song-info">
+                        <p class="song-title">It's You</p>
+                        <p class="song-artist">Ali Gatie</p>
+                    </div>
+                    <button class="play-button">▶</button>
+                </div>
+                <div class="song-item" data-song="2">
+                    <span class="song-number">02</span>
+                    <div class="song-info">
+                        <p class="song-title">Only You</p>
+                        <p class="song-artist">Joseph Vincent</p>
+                    </div>
+                    <button class="play-button">▶</button>
+                </div>
+                <div class="song-item" data-song="3">
+                    <span class="song-number">03</span>
+                    <div class="song-info">
+                        <p class="song-title">IDK You Yet</p>
+                        <p class="song-artist">Alexander 23</p>
+                    </div>
+                    <button class="play-button">▶</button>
+                </div>
+                <div class="song-item" data-song="4">
+                    <span class="song-number">04</span>
+                    <div class="song-info">
+                        <p class="song-title">Happy Together</p>
+                        <p class="song-artist">The Turtles</p>
+                    </div>
+                    <button class="play-button">▶</button>
+                </div>
+                <div class="song-item" data-song="5">
+                    <span class="song-number">05</span>
+                    <div class="song-info">
+                        <p class="song-title">Ain't Christmas</p>
+                        <p class="song-artist">Alexander 23 & Laufey</p>
+                    </div>
+                    <button class="play-button">▶</button>
+                </div>
+                <div class="song-item" data-song="6">
+                    <span class="song-number">06</span>
+                    <div class="song-info">
+                        <p class="song-title">Past Lives</p>
+                        <p class="song-artist">Farizki</p>
+                    </div>
+                    <button class="play-button">▶</button>
+                </div>
+            </div>
+            
+            <button id="level3-next" class="game-button">Continue to Ending 🎁</button>
+        </div>
+    </div>
+
+    <!-- Final Screen -->
+    <div id="final-screen" class="screen">
+        <div class="final-content">
+            <div class="sparkles-container">
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+            <div class="final-message">
+                <p class="final-text glow-text">Distance fades when wishes are sincere.</p>
+                <p class="final-text glow-text">Merry Christmas — may this season be gentle with you.</p>
+            </div>
+            <button id="replay-game" class="game-button pulse">Replay the Game 🎁</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
